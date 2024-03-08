@@ -1,9 +1,11 @@
 on : push
 jobs :
-        first-job:
+        second-job:
           runs-on : ubuntu-latest
           steps :
                   - run : node --version
                   - run : npm --version
-                  -uses : actions/checkout@v4
-                  -run : node index.js
+                  - uses : actions/checkout@v4
+                  - run : npm ci
+                  - run : node index.js
+                  
